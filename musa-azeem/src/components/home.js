@@ -1,5 +1,11 @@
 import {useState} from "react"
 
-function home() {
-    return (<p>hello</p>)
+function Home() {
+    return (
+        <>
+            <p>hello</p>        
+        </>
+    )
 }
+
+export default Home
