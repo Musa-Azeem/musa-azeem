@@ -1,3 +1,50 @@
-#root {
-    padding: 60px;
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+body {
+  background: #333;
+  margin: 0;
+  font-family: "Poppins";
+  color: #f8f9fa
+}
+header {
+  background: #333;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  margin-left: 75px;
+} 
+header .container {
+  max-width: 1400px;
+  margin: 10 auto;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.home .container {
+  position: relative;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+.pfp {
+  padding: 20px;
 }
