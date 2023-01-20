@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
             // Update DOM elements
             quote.textContent = data.content;
-            cite.textContent = data.author;
+            cite.textContent = "- " + data.author;
         } else {
             quote.textContent = "loading ...";
             console.log(data);

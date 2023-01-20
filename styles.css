@@ -1,48 +1,51 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
+:root {
+  --text: #f8f9fa;
+  --bg: #333333;
+  --hover: #bcbcbc;
+}
+
 body {
-  background: #333;
+  background: var(--bg);
   margin: 0;
   font-family: "Poppins";
-  color: #f8f9fa
+  color: var(--text);
 }
 header {
-  background: #333;
+  background: var(--bg);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 10px;
   margin-left: 75px;
+  margin-bottom: 50px;
 } 
 header .container {
   max-width: 1400px;
   margin: 10 auto;
   padding: 10px 20px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 header a {
-  color: #f8f9fa;
+  color: var(--text);
   text-decoration: none;
 }
-
-.pages{
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
+header a:hover {
+  color: var(--hover);
 }
 
 /* homepage */
 .home {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
 }
 
 .home .container {
   position: relative;
   margin: 0px auto;
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
 .home .container .icon {
@@ -50,6 +53,10 @@ header a {
   width: 45px;
   margin: 5px 5px;
   fill: currentColor;
+}
+
+.home .container a:hover .icon {
+  fill: var(--hover);
 }
 
 .home a {
@@ -60,6 +67,11 @@ header a {
   border-radius: 50%;
   /* border: solid 3px rgba(0, 0, 0, 0.2); */
   box-shadow: inset 20px 20px 0px 0px #DBA632;
+}
+
+.home blockquote {
+  max-width: 400px;
+  text-align: center;
 }
 
 .home a:link {
