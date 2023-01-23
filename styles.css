@@ -21,10 +21,12 @@ header {
   margin-left: 75px;
   margin-bottom: 50px;
 } 
-header .container {
+header li {
+  list-style-type: none;
+  display: inline;
   max-width: 1400px;
-  margin: 10 auto;
-  padding: 10px 20px;
+  margin: 0px;
+  padding: 0px;
   align-items: center;
   justify-content: space-between;  
 }
@@ -34,6 +36,11 @@ header a {
 }
 header a:hover {
   color: var(--hover);
+}
+
+/* Small screen */
+@media screen and (max-width: 1000px) {
+
 }
 
 /* homepage */
