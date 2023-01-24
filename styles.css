@@ -16,16 +16,20 @@ body {
 }
 header {
   background: var(--bg);
-  margin-left: 85px;
-  margin-bottom: 50px;
+  margin: 0px 85px 50px 85px;
+  padding: 10px;
   display: flex;
 } 
+header ul {
+  padding: 0px;
+  margin: 0px;
+}
 header li {
   list-style-type: none;
   float: left;
   max-width: 1400px;
   margin: 0px;
-  padding-left: 50px;
+  padding: 0px 25px;
 }
 header a {
   color: var(--text);
@@ -33,17 +37,6 @@ header a {
 }
 header a:hover {
   color: var(--hover);
-}
-
-/* Small screen */
-@media screen and (max-width: 1000px) {
-  header li {
-    list-style-type: none;
-    float: left;
-    max-width: 1400px;
-    margin: 0px;
-    padding-left: 50px;
-  }
 }
 
 /* homepage */
@@ -55,7 +48,7 @@ header a:hover {
 .home .container {
   position: relative;
   margin: 0px auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .home .container .icon {
@@ -75,14 +68,49 @@ header a:hover {
 
 .pfp {
   border-radius: 50%;
-  /* border: solid 3px rgba(0, 0, 0, 0.2); */
-  box-shadow: inset 20px 20px 0px 0px #DBA632;
+  height: 300px
 }
 
 .home blockquote {
   max-width: 400px;
   text-align: center;
 }
+
+/* Small screen */
+@media screen and (max-width: 700px) {
+  header {
+    margin: 0px 30px 25px 30px;
+    justify-content: center;
+  } 
+  header li {
+    padding: 0px 20px;
+  }
+
+  .home {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .home .container {
+    position: relative;
+    margin: 0px auto;
+    margin-bottom: 10px;
+  }
+  
+  .home .container .icon {
+    height: 45px;
+    width: 45px;
+    margin: 5px 5px;
+    fill: currentColor;
+  }
+
+  .pfp {
+    border-radius: 50%;
+    height: 200px
+  }
+}
+
+
 
 .home a:link {
   text-decoration: none;
