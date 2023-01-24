@@ -12,23 +12,20 @@ body {
   margin: 0;
   font-family: "Poppins";
   color: var(--text);
+  overflow: auto;
 }
 header {
   background: var(--bg);
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
-  margin-left: 75px;
+  margin-left: 85px;
   margin-bottom: 50px;
+  display: flex;
 } 
 header li {
   list-style-type: none;
-  display: inline;
+  float: left;
   max-width: 1400px;
   margin: 0px;
-  padding: 0px;
-  align-items: center;
-  justify-content: space-between;  
+  padding-left: 50px;
 }
 header a {
   color: var(--text);
@@ -40,7 +37,13 @@ header a:hover {
 
 /* Small screen */
 @media screen and (max-width: 1000px) {
-
+  header li {
+    list-style-type: none;
+    float: left;
+    max-width: 1400px;
+    margin: 0px;
+    padding-left: 50px;
+  }
 }
 
 /* homepage */
@@ -52,7 +55,7 @@ header a:hover {
 .home .container {
   position: relative;
   margin: 0px auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .home .container .icon {
