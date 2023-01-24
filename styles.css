@@ -107,7 +107,7 @@ header a:hover {
   }
 
   .home .container a:hover .icon {
-    fill: initial;
+    fill: var(--text);
   }
 
   .pfp {
