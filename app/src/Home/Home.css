@@ -1,0 +1,5 @@
+.home .homePic {
+    margin-left: 300px;
+    width: 100%;
+    filter: blur(3px);
+}

@@ -1,0 +1,101 @@
+:root {
+    --bg: #333333;
+    --text: #F8F9FA;
+    --hover: #bcbcbc;
+}
+
+/* ------------------------- Side Nav ----------------------- */
+.sidenav {
+    height: 100%;       /* Full-height: remove this if you want "auto" height */
+    width: 300px;       /* Set the width of the sidebar */
+    position: fixed;    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;         /* Stay on top */
+    top: 0;             /* Stay at the top */
+    left: 0;
+    background-color: var(--bg);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    margin: 0px 0px 0px 0px;
+    box-shadow: 3px 0px 4px black;
+    color: var(--text);
+  } 
+
+    .sidenav h1 {
+        font-size: 32px;
+        margin: 0px;
+    }
+  
+    .sidenav .container {
+      position: relative;
+      margin: 20px 0px 10px 0px;
+      text-align: center;
+    }
+  
+    /* Side Nav pfp */
+    .sidenav .pfp {
+      border-radius: 50%;
+      height: 200px;
+    }
+  
+    /* Side Nav Row Icons */
+    .sidenav .container .icon {
+      height: 45px;
+      width: 45px;
+      margin: 3px 3px;
+      fill: currentColor;
+    }
+  
+    /* Side Nav Divider */
+    .sidenav hr {
+      margin: 30px 30px 30px 30px;
+      border-top: 1.5px solid var(--bg);
+      border-radius: 5%;
+    }
+  
+    /* Side Nav Links*/
+  
+    .sidenav ul {
+      padding: 0px 0px 0px 10px;
+      margin: 0px;
+    }
+  
+      .sidenav ul .icon {
+        height: 27px;
+        width: 27px;
+        fill: currentColor;
+        display: inline;
+        margin: auto 10px;
+      }
+  
+    .sidenav li {
+      list-style-type: none;
+      margin: 10px 0px 10px 0px;
+    }
+      .nav-link {
+        padding: 1px 8px 1px 16px;
+        margin: 10px 0px 10px 0px;
+        display: flex;
+      }
+  
+      .nav-link:hover {
+        cursor: pointer;
+        color: var(--hover);
+      }
+  
+      .sidenav li a {
+        padding: 1px 8px 1px 16px;
+        margin: 10px 0px 10px 0px;
+        display: flex;
+      }
+  
+      .sidenav li h1 {
+        font-size: 22px;
+      }
+
+  
+    .sidenav a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .sidenav a:hover {
+      color: var(--hover);
+    }

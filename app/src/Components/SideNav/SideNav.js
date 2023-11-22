@@ -1,5 +1,6 @@
 import head from '../../assets/head.jpg'
 import resume from '../../assets/Resume.pdf'
+import './SideNav.css'
 import { LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
 
 
@@ -43,10 +44,10 @@ const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
       <hr className="navdivider"></hr>
 
       <ul className="navlinks">
-        <li>
+        <li><div className="nav-link">
           <HouseIcon />
           <h1>Home</h1>
-        </li>
+        </div></li>
         <li><div className="nav-link">
           <PersonIcon />
           <h1 onClick={ () => scrollToRef(aboutRef) }>About</h1>
