@@ -1,9 +1,9 @@
-import head from '../assets/images/head.jpg'
-// import resume from '../assets/files/Resume.pdf'
-// import { LinkedInIcon, GithubIcon, Mail Icon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from './Icons'
+import head from '../../assets/head.jpg'
+import resume from '../../assets/Resume.pdf'
+import { LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
 
 
-const Navbar = ({ aboutRef, projectsRef }) => {
+const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
 
   const scrollToRef = (ref) => {
     if (ref && ref.current) {
@@ -11,17 +11,8 @@ const Navbar = ({ aboutRef, projectsRef }) => {
     }
   }
 
-  const logout = () => {
-    // remove user from storage
-    localStorage.removeItem('user')
-
-    // dispatch logout action
-    dispatch({ type: 'LOGOUT' })
-  }
-
   return (
     <section className="sidenav">
-
       <div className="container">
         <img src={ head } className="pfp" alt="me"></img>
       </div>
@@ -30,32 +21,32 @@ const Navbar = ({ aboutRef, projectsRef }) => {
       </div>
 
       <div className="container">
-        <Link to="https://linkedin.com/in/mmazeem" target="_blank">
+        <a href="https://linkedin.com/in/mmazeem" target="_blank">
           <LinkedInIcon />
-        </Link>
-        <Link to="https://github.com/Musa-Azeem" target="_blank">
+        </a>
+        <a href="https://github.com/Musa-Azeem" target="_blank">
           <GithubIcon />
-        </Link>
-        <Link to="#"  // TODO fix
+        </a>
+        <a href="#"  // TODO fix
           onClick={(e) => {
             window.location.href = "musa.mazeem@gmail.com";
             e.preventDefault();
           }}
         >
           <MailIcon />
-        </Link>
-        <Link to={ resume } target="_blank">
+        </a>
+        <a href={ resume } target="_blank">
           <ResumeIcon />
-        </Link>
+        </a>
       </div>
 
       <hr className="navdivider"></hr>
 
       <ul className="navlinks">
-        {/* <li>
+        <li>
           <HouseIcon />
           <h1>Home</h1>
-        </li> */}
+        </li>
         <li><div className="nav-link">
           <PersonIcon />
           <h1 onClick={ () => scrollToRef(aboutRef) }>About</h1>
@@ -64,17 +55,9 @@ const Navbar = ({ aboutRef, projectsRef }) => {
           <CodeIcon />
           <h1 onClick={ () => scrollToRef(projectsRef) }>Projects</h1>
         </div></li>
-
-        { user &&
-          <li>
-            <button onClick={logout}>
-              Logout
-            </button>
-          </li>
-        }
       </ul>
     </section>
   )
 }
 
-export default Navbar
+export default SideNav
