@@ -1,4 +1,8 @@
-body {
+:root {
+    --navwidth: 300px;
+}
+
+.main {
     color: black;
-    margin-left: 350px;
+    margin-left: var(--navwidth)
 }

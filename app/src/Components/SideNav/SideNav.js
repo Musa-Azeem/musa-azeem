@@ -1,7 +1,7 @@
 import head from '../../assets/head.jpg'
 import resume from '../../assets/Resume.pdf'
 import './SideNav.css'
-import { LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
+import { InstaIcon, LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
 
 
 const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
@@ -22,18 +22,16 @@ const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
       </div>
 
       <div className="container">
+        <a href="https://instagram.com/musa_azm_/" target="_blank">
+          <InstaIcon />
+        </a>
         <a href="https://linkedin.com/in/mmazeem" target="_blank">
           <LinkedInIcon />
         </a>
         <a href="https://github.com/Musa-Azeem" target="_blank">
           <GithubIcon />
         </a>
-        <a href="#"  // TODO fix
-          onClick={(e) => {
-            window.location.href = "musa.mazeem@gmail.com";
-            e.preventDefault();
-          }}
-        >
+        <a href="mailto: abc@example.com" target="_blank">
           <MailIcon />
         </a>
         <a href={ resume } target="_blank">
@@ -41,22 +39,23 @@ const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
         </a>
       </div>
 
-      <hr className="navdivider"></hr>
+      <div className="navdivider"></div>
 
-      <ul className="navlinks">
-        <li><div className="nav-link">
-          <HouseIcon />
-          <h1>Home</h1>
-        </div></li>
-        <li><div className="nav-link">
-          <PersonIcon />
-          <h1 onClick={ () => scrollToRef(aboutRef) }>About</h1>
-        </div></li>
-        <li><div className="nav-link">
-          <CodeIcon />
-          <h1 onClick={ () => scrollToRef(projectsRef) }>Projects</h1>
-        </div></li>
-      </ul>
+
+      <div className="timeline">
+        <div className="container" onClick={ () => scrollToRef(homeRef) }>
+          <h2>Home</h2>
+        </div>
+        <div className="container" onClick={ () => scrollToRef(aboutRef) }>
+          <h2>About</h2>
+        </div>
+        <div className="container"  onClick={ () => scrollToRef(projectsRef) }>
+          <h2>Projects</h2>
+        </div>
+        <div className="container"  onClick={ () => scrollToRef(contactRef) }>
+          <h2>Contact</h2>
+        </div>
+      </div>
     </section>
   )
 }
