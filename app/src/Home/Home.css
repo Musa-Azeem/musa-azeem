@@ -1,75 +1,66 @@
-/* .home .homePic {
-    margin-left: 300px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    object-fit: cover;
-    filter: blur(3px);
-} */
-
 :root {
     --bg: #333333;
     --text: #F8F9FA;
+    --navwidth: 300px
 }
 
 .home {
     width: 100%;
     height: 100vh;
-    background: url("../assets/home_pic.jpg") top center;
-    /* filter: blur(2px); */
-    background-attachment: fixed;
-    background-size: cover;
 }
 
-.home:before {
-    content: "";
+.home::before {
+    content: '';
     position: absolute;
-    bottom: 0;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1;
-  }
+    width: 100%;
+    height: 100%;
+    background: url("../assets/home_pic.jpg") top center;
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: var(--navwidth) top;
+    filter: blur(2.5px);
+    z-index: -1; 
+}
 
-  
-.home .home-container {
-    padding: 70% 10px 10px 50px;
-    position: relative;
-    z-index: 2;
-    min-width: 300px;
+.home .homeContainer {
+    bottom: 40px;
+    right: 100px; 
+    position: absolute;
     display: inline-block;
+    z-index: 1;
+    box-shadow: 3px 0px 4px black;
   }
 
-    .home .home-container div {
+    .home .homeContainer .homeInnerContainer {
         background-color: var(--bg);
+        padding: 15px;
     }
   
     .home h1 {
-        padding: 0 20px 0px 20px;
-        font-size: 64px;
+        font-size: 96px;
         font-weight: 700;
-        line-height: 56px;
         color: var(--text);
+        margin: 0px 0px 10px 0px;
+        line-height: 80px;
+        text-align: right;
     }
   
-  .home p {
-    padding: 0 20px 0px 20px;
+  .home h2 {
+    margin: 10px 0px 0px 0px;
     color: var(--text);
-    margin-bottom: 50px;
-    font-size: 26px;
-    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    text-align: right;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1650px) {
     .home h1 {
-      font-size: 28px;
-      line-height: 36px;
+      font-size: 80px;
+      line-height: 64px;
     }
   
     .home h2 {
-      font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 30px;
+      font-size: 32px;
     }
   }

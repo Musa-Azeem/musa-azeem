@@ -5,11 +5,13 @@ import Home from './Home/Home'
 function App() {
   return (
     <div className="App">
-        <SideNav />
+      <SideNav />
+      <div className="main">
         <Home />
         <h1>Hello</h1>
         <h1>Hello</h1>
         <h1>Hello</h1>
+      </div>
     </div>
   );
 }

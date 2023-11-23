@@ -3,14 +3,15 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <section className='home'>
-      <div class="home-container">
-        <div>
+    <div className='home'>
+      {/* <img src={ HomePic } className="homePic"></img> */}
+      <div className="homeContainer">
+        <div className="homeInnerContainer">
           <h1>Musa Azeem</h1>
-          <p>Hi</p>
+          <h2>Human · Learner · Developer</h2>
         </div>
+      </div>
     </div>
-    </section>
   )
 }
 
