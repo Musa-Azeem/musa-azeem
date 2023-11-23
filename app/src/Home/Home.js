@@ -1,10 +1,10 @@
+import React from 'react'
 import HomePic from '../assets/home_pic.jpg'
 import './Home.css'
 
-const Home = () => {
+const Home = React.forwardRef((props, ref) => {
   return (
-    <div className='home'>
-      {/* <img src={ HomePic } className="homePic"></img> */}
+    <div className='home' ref={ ref }>
       <div className="homeContainer">
         <div className="homeInnerContainer">
           <h1>Musa Azeem</h1>
@@ -13,6 +13,6 @@ const Home = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Home

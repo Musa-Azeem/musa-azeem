@@ -2,14 +2,37 @@ import head from '../../assets/head.jpg'
 import resume from '../../assets/Resume.pdf'
 import './SideNav.css'
 import { InstaIcon, LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
+import { useState, useEffect, useRef } from 'react'
 
 
-const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
+const SideNav = ({ currentPage, homeRef, aboutRef, projectsRef, contactRef}) => {
+
+  const [currentPageClassName, setCurrentPageClassName] = useState('home')
 
   const scrollToRef = (ref) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({behavior: "smooth"})
     }
+  }
+
+  useEffect(() => {
+    if (currentPage.current) {
+      setCurrentPageClassName(currentPage.current.className)
+    }
+    console.log(currentPage)
+    console.log(currentPageClassName)
+  }, [currentPage])
+
+  const getContainerClassName = (className) => {
+    return currentPageClassName == className ? 'container current' : 'container'
+    // if (!currentPage.current) {
+    //   console.log('home and no current')
+    //   return className == 'home' ? 'container current' : 'container'}
+    // if (currentPage.current.className == className) {
+    //   console.log(`current and ${className}`)
+    //   return 'container current'}
+    // console.log('none')
+    // return 'container'
   }
 
   return (
@@ -43,16 +66,16 @@ const SideNav = ({ homeRef, aboutRef, projectsRef, contactRef}) => {
 
 
       <div className="timeline">
-        <div className="container" onClick={ () => scrollToRef(homeRef) }>
+        <div className={ getContainerClassName('home') } onClick={ () => scrollToRef(homeRef) }>
           <h2>Home</h2>
         </div>
-        <div className="container" onClick={ () => scrollToRef(aboutRef) }>
+        <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutRef) }>
           <h2>About</h2>
         </div>
-        <div className="container"  onClick={ () => scrollToRef(projectsRef) }>
+        <div className={ getContainerClassName('projects') }  onClick={ () => scrollToRef(projectsRef) }>
           <h2>Projects</h2>
         </div>
-        <div className="container"  onClick={ () => scrollToRef(contactRef) }>
+        <div className={ getContainerClassName('contact') }  onClick={ () => scrollToRef(contactRef) }>
           <h2>Contact</h2>
         </div>
       </div>

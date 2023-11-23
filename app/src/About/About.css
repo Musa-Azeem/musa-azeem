@@ -1,0 +1,72 @@
+:root {
+    --heading: #4D4D4D;
+    --navbg: #333333;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 25% 30% 30%;
+    padding: 100px 0px 30px 40px;
+    height: 80vh;
+    min-height: 940px;
+}
+
+.about h1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    color: var(--heading);
+    font-size: 64px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.about p {
+    font-size: 18px;
+}
+
+.about .container {
+    padding-left: 40px;
+}
+
+.student {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.software::before, .researcher::before {
+    content: '';
+    display: block;
+    background-color: var(--navbg);
+    width: 10%;
+    height: 4px;
+    border-radius: 10%;
+}
+
+.researcher {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.software {
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.aboutPic {
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.aboutPic img {
+    object-fit: cover;
+    width: 60%;
+    margin: 10% 20%;
+}
