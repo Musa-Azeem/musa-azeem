@@ -11,9 +11,15 @@ const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInVi
   const { projectsRef, projectsInView, projectsEntry } = projectsInViewObj
   const { contactRef, contactInView, contactEntry } = contactInViewObj
 
+  const [justClicked, setJustClicked] = useState(false)
+
   const [currentPageClassName, setCurrentPageClassName] = useState('home')
+  
 
   useEffect(() => {
+    if (justClicked)
+      return
+
     if (homeInView)
       setCurrentPageClassName('home')
     else if (aboutInView)
@@ -25,10 +31,14 @@ const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInVi
   }, [homeInView, aboutInView, projectsInView, contactInView])
 
   const scrollToRef = (ref, className) => {
+    setJustClicked(true)
     setCurrentPageClassName(className)
     if (ref) {
       ref.scrollIntoView({behavior: "smooth"})
     }
+    setTimeout(() => {
+      setJustClicked(false)
+    }, 500); // 500 ms = 0.5 s
   }
 
   const getContainerClassName = (className) => {
