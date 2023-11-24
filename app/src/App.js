@@ -3,46 +3,29 @@ import { useEffect, useState, useRef } from 'react'
 import SideNav from './Components/SideNav/SideNav'
 import Home from './Home/Home'
 import About from './About/About'
+import Projects from './Projects/Projects'
+import Contact from './Contact/Contact'
+import { useInView } from 'react-intersection-observer';
 
 function App() {
-  const homeRef = useRef()
-  const aboutRef = useRef()
-
-  const refs = [homeRef, aboutRef]
-
-  var currentPage = useRef()
-  const [test, setTest] = useState('first')
-
-  useEffect(() => {
-    const handleScroll = () => {
-      refs.forEach((ref) => {
-        if (!ref.current) 
-          return
-        const middle = ref.current.getBoundingClientRect().top + window.innerHeight / 2
-        if (middle >= 0 && middle <= window.innerHeight)
-          currentPage = ref
-        setTest(prevTest => 'new')
-        console.log(test)
-      })
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, []);
+  const [homeRef, homeInView, homeEntry] = useInView({threshold: 0.5})
+  const [aboutRef, aboutInView, aboutEntry] = useInView({threshold: 0.5})
+  const [projectsRef, projectsInView, projectsEntry] = useInView({threshold: 0.5})
+  const [contactRef, contactInView, contactEntry] = useInView({threshold: 0.5})
 
   return (
     <div className="App">
       <SideNav 
-        currentPage={ currentPage }
-        homeRef={ homeRef } 
-        aboutRef={ aboutRef }
+        homeInViewObj={ {homeRef, homeInView, homeEntry} }
+        aboutInViewObj={ {aboutRef, aboutInView, aboutEntry} }
+        projectsInViewObj={ {projectsRef, projectsInView, projectsEntry} }
+        contactInViewObj={ {contactRef, contactInView, contactEntry} }
       />
-      <div className="main" onScroll={ handleScroll }>
+      <div className="main">
         <Home ref={ homeRef } />
         <About ref={ aboutRef } />
+        <Projects ref={ projectsRef } />
+        <Contact ref={ contactRef } />
       </div>
     </div>
   );

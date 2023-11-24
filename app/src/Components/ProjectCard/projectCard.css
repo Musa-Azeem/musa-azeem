@@ -1,0 +1,91 @@
+:root {
+    --cardbg: #4D4D4D;
+    --navbg: #333333;
+    --text: #F8F9FA;
+    --hover: #bcbcbc;
+}
+
+.projectCard {
+    background-color: var(--cardbg);
+    margin: 25px;
+    padding: 5px;
+    perspective: 1000px; /* For 3D effect */
+    box-shadow: 3px 0px 4px black;
+    transition: height 0.8s, max-height 0.8s;
+    /* height set in ProjectCart.js */
+  }
+  
+    .innerProjectCard {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+  
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .projectCard:hover .innerProjectCard {
+      transform: rotateY(180deg);
+    }
+  
+  /* Position the front and back side */
+  .projectCardFront, .projectCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .projectCardFront {
+    background-color: var(--cardbg);
+    display: flex;
+    color: var(--text);
+  
+  }
+    .projectCardFront img {
+      width: 35%;
+      height: 85%;
+      margin: auto 2%;
+      border-radius: 2%;
+    }
+    .projectCardFront h1 {
+      display:inline-block; 
+      padding: 10px;
+      margin: auto 0px;
+      text-align: center;
+      font-size: 1.5vw;
+    }
+  /* Style the back side */
+  .projectCardBack {
+    background-color: var(--cardbg);
+    color: var(--text);
+    transform: rotateY(180deg);
+  }
+  
+    .projectCardBack .iconsList {
+      display: flex;
+      justify-content: center;
+    }
+    .projectCardBack .icon {
+      height: 32px;
+      width: 32px;
+      fill: currentColor;
+      color: var(--text);
+      margin: 5px;
+    }
+  
+    .projectCardBack .icon:hover {
+      color: var(--hover);
+      cursor: pointer;
+    }
+  
+    .projectCardBack p {
+      width: 85%;
+      margin: 5% auto 2%;
+      text-align: center;
+      font-size: 1vw;
+    }
+  

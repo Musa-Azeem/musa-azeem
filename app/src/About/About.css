@@ -42,7 +42,7 @@
 .software::before, .researcher::before {
     content: '';
     display: block;
-    background-color: var(--navbg);
+    background-color: var(--heading);
     width: 10%;
     height: 4px;
     border-radius: 10%;

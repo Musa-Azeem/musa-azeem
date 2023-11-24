@@ -1,38 +1,38 @@
 import head from '../../assets/head.jpg'
-import resume from '../../assets/Resume.pdf'
+import resume from '../../assets/files/Resume.pdf'
 import './SideNav.css'
 import { InstaIcon, LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
 import { useState, useEffect, useRef } from 'react'
 
 
-const SideNav = ({ currentPage, homeRef, aboutRef, projectsRef, contactRef}) => {
+const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInViewObj}) => {
+  const { homeRef, homeInView, homeEntry } = homeInViewObj
+  const { aboutRef, aboutInView, aboutEntry } = aboutInViewObj
+  const { projectsRef, projectsInView, projectsEntry } = projectsInViewObj
+  const { contactRef, contactInView, contactEntry } = contactInViewObj
 
   const [currentPageClassName, setCurrentPageClassName] = useState('home')
 
-  const scrollToRef = (ref) => {
-    if (ref && ref.current) {
-      ref.current.scrollIntoView({behavior: "smooth"})
+  useEffect(() => {
+    if (homeInView)
+      setCurrentPageClassName('home')
+    else if (aboutInView)
+      setCurrentPageClassName('about')
+    else if (projectsInView)
+      setCurrentPageClassName('projects')
+    else if (contactInView)
+      setCurrentPageClassName('contact')
+  }, [homeInView, aboutInView, projectsInView, contactInView])
+
+  const scrollToRef = (ref, className) => {
+    setCurrentPageClassName(className)
+    if (ref) {
+      ref.scrollIntoView({behavior: "smooth"})
     }
   }
 
-  useEffect(() => {
-    if (currentPage.current) {
-      setCurrentPageClassName(currentPage.current.className)
-    }
-    console.log(currentPage)
-    console.log(currentPageClassName)
-  }, [currentPage])
-
   const getContainerClassName = (className) => {
     return currentPageClassName == className ? 'container current' : 'container'
-    // if (!currentPage.current) {
-    //   console.log('home and no current')
-    //   return className == 'home' ? 'container current' : 'container'}
-    // if (currentPage.current.className == className) {
-    //   console.log(`current and ${className}`)
-    //   return 'container current'}
-    // console.log('none')
-    // return 'container'
   }
 
   return (
@@ -54,9 +54,6 @@ const SideNav = ({ currentPage, homeRef, aboutRef, projectsRef, contactRef}) => 
         <a href="https://github.com/Musa-Azeem" target="_blank">
           <GithubIcon />
         </a>
-        <a href="mailto: abc@example.com" target="_blank">
-          <MailIcon />
-        </a>
         <a href={ resume } target="_blank">
           <ResumeIcon />
         </a>
@@ -66,16 +63,16 @@ const SideNav = ({ currentPage, homeRef, aboutRef, projectsRef, contactRef}) => 
 
 
       <div className="timeline">
-        <div className={ getContainerClassName('home') } onClick={ () => scrollToRef(homeRef) }>
+        <div className={ getContainerClassName('home') } onClick={ () => scrollToRef(homeEntry.target, 'home') }>
           <h2>Home</h2>
         </div>
-        <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutRef) }>
+        <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutEntry.target, 'about') }>
           <h2>About</h2>
         </div>
-        <div className={ getContainerClassName('projects') }  onClick={ () => scrollToRef(projectsRef) }>
+        <div className={ getContainerClassName('projects') }  onClick={ () => scrollToRef(projectsEntry.target, 'projects') }>
           <h2>Projects</h2>
         </div>
-        <div className={ getContainerClassName('contact') }  onClick={ () => scrollToRef(contactRef) }>
+        <div className={ getContainerClassName('contact') }  onClick={ () => scrollToRef(contactEntry.target, 'contact') }>
           <h2>Contact</h2>
         </div>
       </div>
