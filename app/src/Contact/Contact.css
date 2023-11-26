@@ -1,0 +1,72 @@
+:root {
+    --heading: #4D4D4D;
+    --bodyhover: #6c6c6c;
+  }
+  
+.contact {
+    margin: 100px 0px 30px 40px;
+    height: 80vh;
+    min-height: 940px;
+}
+.contact .header{
+    color: var(--heading);
+    font-size: 64px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.contactBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 7% 0 13% 0;
+    height: 60%;
+}
+
+.contact .container {
+    padding-left: 60px;    
+}
+
+.contact .phone::before, .contact .linkedin::before {
+    content: '';
+    display: block;
+    background-color: var(--heading);
+    width: 140px;
+    height: 4px;
+    border-radius: 10%;
+}
+
+.contact a {
+    display: flex;
+    text-decoration: none;
+    color: var(--heading);
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact .container p {
+    display: inline-block;
+    font-size: 40px;
+    color: currentColor;
+    margin: auto 10px;
+    padding-left: 30px
+}
+
+@media (max-width: 1400px) {
+    .contact .container p {
+        font-size: 32px;
+    }
+}
+
+.contact .icon {
+    height: 55px;
+    width: 55px;
+    margin: 3px 4px;
+    fill: currentColor;
+}
+
+.contact a:visited { text-decoration: none; color:var(--heading); }
+.contact a:focus { text-decoration: none; color:var(--heading)}
+.contact a:hover { text-decoration: none; color:var(--bodyhover); }
+.contact a:active { text-decoration: none; color:var(--bodyhover) }

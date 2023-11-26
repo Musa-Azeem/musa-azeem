@@ -1,0 +1,21 @@
+:root {
+  --heading: #4D4D4D;
+}
+
+.projects {
+  padding: 100px 0px 30px 40px;
+  height: 80vh;
+  min-height: 940px;
+}
+.projects .header{
+  color: var(--heading);
+  font-size: 64px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.projectsBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 7% 10px;
+  }
