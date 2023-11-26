@@ -18,7 +18,6 @@
     color: var(--heading);
     font-size: 64px;
     margin: 0;
-    margin-bottom: 20px;
 }
 
 .about h2 {
@@ -28,6 +27,18 @@
 
 .about p {
     font-size: 18px;
+}
+
+@media (max-width: 1650px) {
+    .about p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .about p {
+        font-size: 14px;
+    }
 }
 
 .about .container {
@@ -43,7 +54,7 @@
     content: '';
     display: block;
     background-color: var(--heading);
-    width: 10%;
+    width: 100px;
     height: 4px;
     border-radius: 10%;
 }
@@ -61,12 +72,20 @@
 .aboutPic {
     grid-column-start: 1;
     grid-column-start: 2;
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-row-end: 5;
 }
 
 .aboutPic img {
     object-fit: cover;
+    object-position: center top;
     width: 60%;
     margin: 10% 20%;
+    max-height: 80vh;
+}
+
+@media (max-width: 1650px) {
+    .aboutPic {
+        grid-row-start: 2;
+    }
 }
