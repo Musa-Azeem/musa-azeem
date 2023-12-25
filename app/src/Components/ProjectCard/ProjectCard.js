@@ -5,13 +5,21 @@ import './projectCard.css'
 const maxHeight = 160;
 
 const ProjectCard = ({ project }) => {
-
+  
   const [isHover, setIsHover] = useState(false);
   const [height, setHeight] = useState('')
+  const [mobileClicked, setMobileClicked] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600)
   const backRef = useRef(null)
-
+  
+  if (project.title === 'Smartwatch Smoking Recognition') {
+    console.log(project.title + 'rerender ' + mobileClicked)
+  }
+  
   const updateSize = () => {
-    if (isHover) {
+    setIsMobile(window.innerWidth <= 600)
+    
+    if ((isHover && !isMobile) || mobileClicked) {
       setHeight(`${20+backRef.current.clientHeight}px`)
     }
     else {
@@ -28,17 +36,29 @@ const ProjectCard = ({ project }) => {
   
   useEffect(() => {
     updateSize()
-  }, [isHover])
+  }, [isHover, mobileClicked])
+
+  const mobileTransform = () => {
+    if (!isMobile) {
+      return {}
+    }
+    else {
+      return mobileClicked ? {transform: 'rotateY(180deg)'} : {transform: 'none'}
+    }
+  }
 
   return (
-    <div className="projectCard" 
+    <div className="projectCard"
       onMouseEnter={() => { setIsHover(true)} }
       onMouseLeave={() => { setIsHover(false)} } 
+      onClick={ () => { setMobileClicked(isMobile ? !mobileClicked : false)}}
       style = { {height: height} }
     >
-      <div className="innerProjectCard">
+      <div className="innerProjectCard" style={ mobileTransform() }>
         <div className="projectCardFront">
-          <img src={ project.image } alt={ "Image for " + project.title }></img>
+          <div className="projectCardImg">
+            <img src={ project.image } alt={ "Image for " + project.title }></img>
+          </div>
           <h1>{ project.title }</h1>
         </div>
         <div className="projectCardBack">

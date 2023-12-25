@@ -62,7 +62,7 @@ const config = {
     },
     {
       title: 'Duckiebot Robotics',
-      description: 'A simple game built in Unity. The player controls a duck and must collect as many coins as possible while avoiding enemies. The game is built in Unity and written in C#.',
+      description: "Used rospy to direct a wheeled robot to follow a defined track. ROS nodes were used to establish communication between the robot's camera, which processed video with OpenCV, and its wheels, which were controlled with motor voltage.",
       image: ducks,
       projectURL: 'https://github.com/Musa-Azeem/duckiebot',
       extraLink: 'https://www.youtube.com/watch?v=gtYVM_3okz4'

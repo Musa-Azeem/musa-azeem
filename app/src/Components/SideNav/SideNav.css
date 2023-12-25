@@ -170,3 +170,73 @@
   cursor: pointer;
   color: var(--hover);
 }
+
+@media (min-width: 600px) {
+  .mobileTopNav {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .sidenav {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+  }
+    .sidenav h1 {
+      font-size: 3em;
+      margin: 0px;
+    }
+    .navdivider {
+      display: block;
+      margin: 30px auto;
+      width: 40%;
+      border: 3px solid var(--text);
+      border-radius: 1.5px;
+    }
+    .sidenav .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 25% 0 0 0;
+    }
+    .timeline::after {
+      display: none;
+    }
+    .timeline .container::after {
+      display: none;
+    }
+    .timeline .container {
+      left: 0%;
+      margin: 0px 0px 40px 0px;
+    }
+    .timeline .container h2 {
+      text-align: center;
+      padding-left: 0;
+      font-size: 2em;
+    }
+    .sidenav .homelink {
+      display: none;
+    }
+
+  .mobileTopNav {
+    position: fixed;
+    background-color: var(--bg);
+    width: 100%;
+    z-index: 2;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 3px 0px 4px black;
+  }
+
+    .mobileTopNav .icon {
+      height: 45px;
+      width: 45px;
+      margin: 3px 4px;
+      fill: currentColor;
+    }
+}

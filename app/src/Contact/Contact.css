@@ -18,7 +18,7 @@
 .contactBody {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     margin: 7% 0 13% 0;
     height: 60%;
 }
@@ -27,7 +27,7 @@
     padding-left: 60px;    
 }
 
-.contact .phone::before, .contact .linkedin::before {
+.contact .phone::before, .contact .linkedin::before, .contact .resume::before {
     content: '';
     display: block;
     background-color: var(--heading);
@@ -50,7 +50,8 @@
     font-size: 40px;
     color: currentColor;
     margin: auto 10px;
-    padding-left: 30px
+    padding-left: 30px;
+    word-break: break-all;
 }
 
 @media (max-width: 1400px) {
@@ -70,3 +71,31 @@
 .contact a:focus { text-decoration: none; color:var(--heading)}
 .contact a:hover { text-decoration: none; color:var(--bodyhover); }
 .contact a:active { text-decoration: none; color:var(--bodyhover) }
+
+/* Mobile */
+@media (max-width: 600px) {
+    .contact {
+        padding: 60px 10px 200px 10px;
+        margin: 0;
+        height: auto;
+        min-height: 0px;
+    }
+    .contact .header {
+        text-align: center;
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
+    .contactBody {
+        display: flex;
+        flex-direction: column;
+        margin: 25% 0 0 0;
+        height: auto;
+        gap: 20px;
+    }
+    .contact .container p {
+        font-size: 25px;
+    }
+    .contact .phone::before, .contact .linkedin::before, .contact .resume::before {
+        margin-bottom: 20px;
+    }
+}
