@@ -41,22 +41,27 @@
   /* Style the front side */
   .projectCardFront {
     background-color: var(--cardbg);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     color: var(--text);
-  
   }
+    .projectCardImg {
+      overflow: hidden;
+    }
+
     .projectCardFront img {
-      width: 35%;
-      height: 85%;
-      margin: auto 2%;
+      width: 70%;
+      height: 80%;
+      padding: 5% 5%;
       border-radius: 2%;
+      object-fit: fill;
     }
     .projectCardFront h1 {
       display:inline-block; 
       padding: 10px;
       margin: auto 0px;
       text-align: center;
-      font-size: 1.5vw;
+      font-size: 1.5em;
     }
   /* Style the back side */
   .projectCardBack {
@@ -86,6 +91,22 @@
       width: 85%;
       margin: 5% auto 2%;
       text-align: center;
-      font-size: 1vw;
+      font-size: 18px;
     }
   
+/* Mobile */
+@media (max-width: 600px) {
+  .projectCard {
+    margin: 10px;
+  }
+    .projectCardFront {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .projectCardFront h1 {
+      font-size: 1.5em;
+    }
+    .projectCardBack p {
+      font-size: 14px;
+    }
+}

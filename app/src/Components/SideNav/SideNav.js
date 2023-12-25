@@ -1,7 +1,8 @@
 import head from '../../assets/head.jpg'
 import resume from '../../assets/files/Resume.pdf'
 import './SideNav.css'
-import { InstaIcon, LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon } from '../Icons'
+import { InstaIcon, LinkedInIcon, GithubIcon, MailIcon, ResumeIcon, HouseIcon, PersonIcon, CodeIcon, MailOutlineIcon } from '../Icons'
+import { useInView } from 'react-intersection-observer';
 import { useState, useEffect, useRef } from 'react'
 
 
@@ -11,10 +12,11 @@ const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInVi
   const { projectsRef, projectsInView, projectsEntry } = projectsInViewObj
   const { contactRef, contactInView, contactEntry } = contactInViewObj
 
+  const [navRef, navInView, navEntry] = useInView({threshold: 0.1})
+
   const [justClicked, setJustClicked] = useState(false)
 
   const [currentPageClassName, setCurrentPageClassName] = useState('home')
-  
 
   useEffect(() => {
     if (justClicked)
@@ -46,47 +48,55 @@ const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInVi
   }
 
   return (
-    <section className="sidenav">
-      <div className="container">
-        <img src={ head } className="pfp" alt="me"></img>
-      </div>
-      <div className="container">
-        <h1>Musa Azeem</h1>
-      </div>
-
-      <div className="container">
-        <a href="https://instagram.com/musa_azm_/" target="_blank">
-          <InstaIcon />
-        </a>
-        <a href="https://linkedin.com/in/mmazeem" target="_blank">
-          <LinkedInIcon />
-        </a>
-        <a href="https://github.com/Musa-Azeem" target="_blank">
-          <GithubIcon />
-        </a>
-        <a href={ resume } target="_blank">
-          <ResumeIcon />
-        </a>
-      </div>
-
-      <div className="navdivider"></div>
-
-
-      <div className="timeline">
-        <div className={ 'homelink ' + getContainerClassName('home') } onClick={ () => scrollToRef(homeEntry.target, 'home') }>
-          <h2>Home</h2>
+    <>
+      <section className="mobileTopNav" style={ navInView ? {display: 'none'} : {} }>
+        <div onClick={ () => navEntry.target.scrollIntoView({behavior: 'smooth'}) }><HouseIcon /></div>
+        <div onClick={ () => aboutEntry.target.scrollIntoView({behavior: 'smooth'}) }><PersonIcon /></div>
+        <div onClick={ () => projectsEntry.target.scrollIntoView({behavior: 'smooth'}) }><CodeIcon /></div>
+        <div onClick={ () => contactEntry.target.scrollIntoView({behavior: 'smooth'}) }><MailOutlineIcon /></div>
+      </section>
+      <section className="sidenav" ref={ navRef }>
+        <div className="container">
+          <img src={ head } className="pfp" alt="me"></img>
         </div>
-        <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutEntry.target, 'about') }>
-          <h2>About</h2>
+        <div className="container">
+          <h1>Musa Azeem</h1>
         </div>
-        <div className={ getContainerClassName('projects') }  onClick={ () => scrollToRef(projectsEntry.target, 'projects') }>
-          <h2>Projects</h2>
+
+        <div className="container">
+          <a href="https://instagram.com/musa_azm_/" target="_blank">
+            <InstaIcon />
+          </a>
+          <a href="https://linkedin.com/in/mmazeem" target="_blank">
+            <LinkedInIcon />
+          </a>
+          <a href="https://github.com/Musa-Azeem" target="_blank">
+            <GithubIcon />
+          </a>
+          <a href={ resume } target="_blank">
+            <ResumeIcon />
+          </a>
         </div>
-        <div className={ getContainerClassName('contact') }  onClick={ () => scrollToRef(contactEntry.target, 'contact') }>
-          <h2>Contact</h2>
+
+        <div className="navdivider"></div>
+
+
+        <div className="timeline">
+          <div className={ 'homelink ' + getContainerClassName('home') } onClick={ () => scrollToRef(homeEntry.target, 'home') }>
+            <h2>Home</h2>
+          </div>
+          <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutEntry.target, 'about') }>
+            <h2>About</h2>
+          </div>
+          <div className={ getContainerClassName('projects') }  onClick={ () => scrollToRef(projectsEntry.target, 'projects') }>
+            <h2>Projects</h2>
+          </div>
+          <div className={ getContainerClassName('contact') }  onClick={ () => scrollToRef(contactEntry.target, 'contact') }>
+            <h2>Contact</h2>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
