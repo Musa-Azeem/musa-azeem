@@ -73,7 +73,7 @@ const SideNav = ({ homeInViewObj, aboutInViewObj, projectsInViewObj, contactInVi
 
 
       <div className="timeline">
-        <div className={ getContainerClassName('home') } onClick={ () => scrollToRef(homeEntry.target, 'home') }>
+        <div className={ 'homelink ' + getContainerClassName('home') } onClick={ () => scrollToRef(homeEntry.target, 'home') }>
           <h2>Home</h2>
         </div>
         <div className={ getContainerClassName('about') } onClick={ () => scrollToRef(aboutEntry.target, 'about') }>

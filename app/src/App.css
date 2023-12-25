@@ -4,5 +4,5 @@
 
 .main {
     color: black;
-    margin-left: var(--navwidth)
+    /* margin-left: var(--navwidth) */
 }

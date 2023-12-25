@@ -170,3 +170,45 @@
   cursor: pointer;
   color: var(--hover);
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .sidenav {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+  }
+  .sidenav h1 {
+    font-size: 3em;
+    margin: 0px;
+  }
+  .navdivider {
+    display: block;
+    margin: 30px auto;
+    width: 40%;
+    border: 3px solid var(--text);
+    border-radius: 1.5px;
+  }
+  .sidenav .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .timeline::after {
+    display: none;
+  }
+  .timeline .container::after {
+    display: none;
+  }
+  .timeline .container {
+    left: 0%;
+  }
+  .timeline .container h2 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+  .sidenave .homelink {
+    display: none;
+  }
+}
