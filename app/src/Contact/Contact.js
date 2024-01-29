@@ -15,9 +15,9 @@ const Contact = React.forwardRef((props, ref) => {
           </a>
         </div>
         <div className='container phone'>
-          <a href='tel:803-766-6154'>
+          <a href='tel:803-397-3337'>
             <PhoneIcon />
-            <p>(803) 766-6154</p>
+            <p>(803) 397-3337</p>
           </a>
         </div>
         <div className='container linkedin'>
