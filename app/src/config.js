@@ -1,7 +1,7 @@
-import kmeans from './assets/projectImages/cluster.png'
+import protein from './assets/projectImages/protein.png'
+import dashboard from './assets/projectImages/dashboard.png'
 import cpu from './assets/projectImages/cpu.png'
-import quicksort from './assets/projectImages/sort.png'
-import ipc from './assets/projectImages/ipc.png'
+import motor from './assets/projectImages/motor.gif'
 import cig from './assets/projectImages/cig.png'
 import brain from './assets/projectImages/brain.png'
 import profile from './assets/projectImages/profile.png'
@@ -10,6 +10,19 @@ import ducks from './assets/projectImages/duck_background.png'
 
 const config = {
   projectsList: [
+    {
+      title: 'Protein Structure Evaluation',
+      description: 'Developed a Python library and advanced data analysis and ML techniques to evaluate protein structure predictions in the absence of experimentally determined structures. The library calculates an accuracy metric comparable to the industry standard RMSD, providing robust evaluation capabilities.',
+      image: protein,
+      projectURL: 'https://github.com/Musa-Azeem/protein-dihedral-visualization'
+    },
+    {
+      title: 'Faculty Dashboard',
+      description: 'Developed a full stack faculty dashboard app, which allows Professors and Department Chairs at UofSC to access a consolidated view of student evaluations, research information, and relative performance of themselves and their team members. The website was built with Flask, React, and MySQL. The backend serves as a REST API and processes large CSV files to gather data, input this data into the database, and performed calculations to analyze data. The frontend provides a seamless, multi-page, and in-depth dashboard for faculty members to view all of this information. The app was deployed on a server using Apache.',
+      image: dashboard,
+      projectURL: 'https://github.com/SCCapstone/K3MS',
+      extraLink: 'https://sccapstone.github.io/K3MS/'
+    },
     {
       title: 'Smartwatch Smoking Recognition',
       description: 'Android watch app in to record, annotate, and process data from the watch\'s accelerometer to live feed into a running machine learning model and detect if the wearer is smoking. The neural network was developed in pytorch and was trained on many sample smoking gestures. The Android app was built in Kotlin and jetpack compose and utilizes the Android Lifecycle to control user interaction and gesture detection.',
@@ -23,10 +36,10 @@ const config = {
       projectURL: 'https://github.com/smithandrewk/aurora'
     },
     {
-      title: 'K-Means-Cluster Analysis', 
-      description: 'Built a C++ program from scratch to preform k-Means-Cluster analysis on a given set of data, with a focus on object-oriented programming and algorithm design.', 
-      image: kmeans,
-      projectURL: 'https://github.com/Musa-Azeem/K-Means-Clustering'
+      title: 'Embedded PID Motor Controller',
+      description: 'Developed hardware and software components of an embedded PID controller to synchronize a motor to rotate at a desired rate. Hardware components were designed in SystemVerilog and synthesized on an FPGA board to supply a positive or negative PWM signal to a motor and read the motor encoding (conveying its actual speed). Additional hardware circuits were constructed on a breadboard with the motor. Software components were developed in C and implemented a PID controller to read motor encodings and send appropriate signals back.',
+      image: motor,
+      projectURL: 'https://github.com/Musa-Azeem/embedded-motor-PID	Au'
     },
     {
       title: 'Portfolio Website',
@@ -40,18 +53,6 @@ const config = {
       description: 'Designed a 3-stage pipelined CPU to run RISC-V assembly instructions in SystemVerilog and synthesized it on a FPGA board.',
       image: cpu,
       projectURL: 'https://github.com/Musa-Azeem/CSCE611'
-    },
-    {
-      title: 'Quicksort',
-      description: 'Implementation of the quick sort algorithm in C++ with an emphasis on OOP and efficiency.',
-      image: quicksort,
-      projectURL: 'https://github.com/Musa-Azeem/quick-sort'
-    },
-    {
-      title: 'IPC',
-      description: 'Client-server pair that searches for a string in a certain file using POSIX IPC. The client is given a filename and a search string. It then sends the file name to the server using Shared Memery. The server opens and loads the file of the given name into Shared Memory and signals the client to start searching the file in shared memory using threads. The client outputs any lines containing the given string.',
-      image: ipc,
-      projectURL: 'https://github.com/Musa-Azeem/IPC-String-Search'
     },
     {
       title: 'Smart Cat House',
