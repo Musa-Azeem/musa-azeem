@@ -1,3 +1,3 @@
 [Musa Azeem](https://www.musaazeem.com)
 
-I am a recent graduate from the University of South Carolina Honors college, where I studied Computer Engineering with a minor in Mathematics. I am now pursuing a Master's in Computer Science, with a focus on Artifical Intelligence. I plan to graduate in May 2025. I conduct research in the UofSC Computer Science department under Dr. Homayoun Valafar, where I work on multiple research projects with a focus on AI in health, including human activity recognition and protein structure prediction. My work has involved research and development of neural networks for classification and prediction, as well as the development of multiple software platforms.
+Software engineer at Cognito Forms and machine learning researcher and developer. Graduated from the University of South Carolina Honors college with an M.S. in Computer Science with a focus on Artificial Intelligence and a B.S. in Computer Engineering with a minor in Mathematics.

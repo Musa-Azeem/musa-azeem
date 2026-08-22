@@ -8,15 +8,15 @@ const About = React.forwardRef((props, ref) => {
       <h1>About</h1>
       <div className='container student'>
         <h2>Student</h2>
-        <p>I am a recent graduate from the University of South Carolina Honors college, where I studied Computer Engineering with a minor in Mathematics. I am now pursuing a Master's in Computer Science, with a focus on Artifical Intelligence. I plan to graduate in May 2025.</p>
+        <p>I graduated from the University of South Carolina Honors College with a Bachelor's in Computer Engineering and a minor in Mathematics, then went on to complete a Master's in Computer Science with a focus on Artificial Intelligence in May 2025. Now, I continue to study machine learning and AI on my own, keeping up with the latest research and techniques in the field.</p>
       </div>
       <div className='container researcher'>
         <h2>Researcher</h2>
-        <p>I conduct research in the UofSC Computer Science department under Dr. Homayoun Valafar, where I work on multiple research projects with a focus on AI in health, including <i>human activity recognition</i> and <i>protein structure prediction</i>. My work has involved research and development of neural networks for classification and prediction, as well as the development of multiple software platforms. </p>
+        <p>In the past I conducted research in the UofSC Computer Science department under Dr. Homayoun Valafar, working on multiple projects focused on AI in health, including human activity recognition and protein structure prediction. My work involved researching and developing neural networks for classification and prediction, as well as building the software platforms to support that research. Today, I work on projects of my own to continue exploring research questions.</p>
       </div>
       <div className='container software'>
         <h2>Software Developer</h2>
-        <p>I work as a Software Developer Intern at SIOS Technology Corporation, where I develop AI solutions. I lead the development of a RAG-based LLM Chatbot for internal use and customer support. Other projects I work on include developing software to parse and extract information from log files and the development of a training course for our product.</p>
+        <p>I currently work as a Full-stack Software Engineer at Cognito Forms, building features like LLM-based tools and payment integrations, and improving performance along the way. In the past, I've worked on various software projects, including the development of a RAG-based LLM chatbot and health monitoring apps for wearable devices.</p>
       </div>
       <div className='aboutPic'>
         <img src={ about_pic }></img>

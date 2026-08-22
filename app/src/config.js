@@ -2,11 +2,11 @@ import protein from './assets/projectImages/protein.png'
 import dashboard from './assets/projectImages/dashboard.png'
 import cpu from './assets/projectImages/cpu.png'
 import motor from './assets/projectImages/motor.gif'
-import cig from './assets/projectImages/cig.png'
 import brain from './assets/projectImages/brain.png'
 import profile from './assets/projectImages/profile.png'
-import catHouseCircuit from './assets/projectImages/CatHouseCircuit.png'
 import ducks from './assets/projectImages/duck_background.png'
+import dumbbell from './assets/projectImages/dumbbell.jpg'
+import activity from './assets/projectImages/activity.jpg'
 
 const config = {
   projectsList: [
@@ -14,7 +14,22 @@ const config = {
       title: 'Protein Structure Evaluation',
       description: 'Developed a Python library and advanced data analysis and ML techniques to evaluate protein structure predictions in the absence of experimentally determined structures. The library calculates an accuracy metric comparable to the industry standard RMSD, providing robust evaluation capabilities.',
       image: protein,
-      projectURL: 'https://github.com/Musa-Azeem/protein-dihedral-visualization'
+      projectURL: 'https://github.com/Musa-Azeem/pdbmine_analytics_lib',
+      extraLink: 'https://doi.org/10.3389/fmolb.2025.1694750'
+    },
+    {
+      title: 'Human Activity Recognition',
+      description: 'Researched and implemented deep learning models using PyTorch, including LSTM, CNN, and Autoencoder architectures, to achieve high accuracy in human activity recognition using tri-axis accelerometer data. The models were trained on a modest dataset of labelled human activity data and learned to classify windows of time into different activities, such as eating, smoking, and exercising.',
+      image: activity,
+      projectURL: 'https://github.com/musa-azeem/eating-detection',
+      extraLink: 'https://doi.org/10.3390/s24144542'
+    },
+    {
+      title: 'AI Fitness Coaching',
+      description: 'Developed a real-time, deep learning powered system to identify near-failure states during resistance training using a single wrist-mounted IMU. Engineered a two-stage, edge-deployable machine learning pipeline that combines a ResNet-based model for repetition segmentation with an LSTM-powered classifier, achieving low-latency inference on mobile and wearable devices.',
+      image: dumbbell,
+      projectURL: 'https://github.com/Musa-Azeem/RepAI',
+      extraLink: 'https://doi.org/10.48550/arXiv.2512.11854'
     },
     {
       title: 'Faculty Dashboard',
@@ -22,12 +37,6 @@ const config = {
       image: dashboard,
       projectURL: 'https://github.com/SCCapstone/K3MS',
       extraLink: 'https://sccapstone.github.io/K3MS/'
-    },
-    {
-      title: 'Smartwatch Smoking Recognition',
-      description: 'Android watch app in to record, annotate, and process data from the watch\'s accelerometer to live feed into a running machine learning model and detect if the wearer is smoking. The neural network was developed in pytorch and was trained on many sample smoking gestures. The Android app was built in Kotlin and jetpack compose and utilizes the Android Lifecycle to control user interaction and gesture detection.',
-      image: cig,
-      projectURL: 'https://github.com/smithandrewk/delta'
     },
     {
       title: 'Sleep Stage Classification Web App',
@@ -53,13 +62,6 @@ const config = {
       description: 'Designed a 3-stage pipelined CPU to run RISC-V assembly instructions in SystemVerilog and synthesized it on a FPGA board.',
       image: cpu,
       projectURL: 'https://github.com/Musa-Azeem/CSCE611'
-    },
-    {
-      title: 'Smart Cat House',
-      description: 'Built a wooden "smart" cat house. It used a microcontroller and environment sensitive variable resistors to moderate heating and lighting in the cat house. The house also consisted of a pressure pad activated motorized door.',
-      image: catHouseCircuit,
-      projectURL: 'https://github.com/Musa-Azeem/elct201_final_project',
-      extraLink: 'https://drive.google.com/file/d/1m0yIN3qQHxl2ouXgyICxia8AekiMA74T/view'
     },
     {
       title: 'Duckiebot Robotics',
